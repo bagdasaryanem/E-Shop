@@ -1,0 +1,139 @@
+﻿@model E_Shop.Models.Phone
+
+<div class="main">
+    <div class="phone-create p-4">
+        <h2>@(Model.Id!=0 ? "Edit" : "Create") Phone</h2>
+        <form method="post">
+            @if (Model.Id != 0)
+                {
+                    <input type="hidden" asp-for="Id" />
+                }
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Name" class="form-label">Name</label>
+                        </th>
+                        <td>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Photos" class="form-label">Photo URL</label>
+                        </th>
+                        <td>
+                            <input asp-for="Photos" type="url" class="form-control" />
+                            <span asp-validation-for="Photos" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Manufacturer" class="form-label">Manufacturer</label>
+                        </th>
+                        <td>
+                            <input asp-for="Manufacturer" class="form-control" />
+                            <span asp-validation-for="Manufacturer" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Size" class="form-label">Size</label>
+                        </th>
+                        <td>
+                            <input asp-for="Size" class="form-control" />
+                            <span asp-validation-for="Size" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Weight" class="form-label">Weight</label>
+                        </th>
+                        <td>
+                            <input asp-for="Weight" class="form-control" />
+                            <span asp-validation-for="Weight" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="DisplaySize" class="form-label">Display Size</label>
+                        </th>
+                        <td>
+                            <input asp-for="DisplaySize" class="form-control" />
+                            <span asp-validation-for="DisplaySize" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Processor" class="form-label">Processor</label>
+                        </th>
+                        <td>
+                            <input asp-for="Processor" class="form-control" />
+                            <span asp-validation-for="Processor" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Memory" class="form-label">Memory</label>
+                        </th>
+                        <td>
+                            <input asp-for="Memory" class="form-control" />
+                            <span asp-validation-for="Memory" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="OperatingSystem" class="form-label">Operating System</label>
+                        </th>
+                        <td>
+                            <input asp-for="OperatingSystem" class="form-control" />
+                            <span asp-validation-for="OperatingSystem" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            <label asp-for="Price" class="form-label">Price</label>
+                        </th>
+                        <td>
+                            <input asp-for="Price" class="form-control" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="display: flex; justify-content: space-around">
+                <button type="submit"
+                        class="btn btn-success"
+                        style="display: flex; align-items: center">
+                    <svg style="margin-right: 5px"
+                         xmlns="http://www.w3.org/2000/svg"
+                         width="16"
+                         height="16"
+                         fill="currentColor"
+                         class="bi bi-plus-circle-fill"
+                         viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                    </svg>
+                    @(Model.Id != 0 ? "Edit" : "Add New") Phone
+                </button>
+
+                <a asp-action="Index" class="btn btn-danger">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
